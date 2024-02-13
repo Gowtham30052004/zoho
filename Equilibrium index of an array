@@ -1,0 +1,29 @@
+Given a sequence arr[] of size n, Write a function int equilibrium(int[] arr, int n) that returns an equilibrium index (if any) or -1 if no equilibrium index exists. 
+#include <stdio.h>
+#include <string.h>
+int  solution(int*arr,int size)
+{   int sum=0;
+int leftsum=0;
+    for(int i=0;i<size;i++)
+    {
+        sum+=arr[i];
+    }
+    for(int j=0;j<size;j++)
+    {
+        sum-=arr[j];
+        if(sum==leftsum)
+            return j;
+        leftsum+=arr[j];
+    }
+
+}
+
+int main()
+{
+
+  int arr[]={ -7, 1, 5, 2, -4, 3, 0 };
+  int size=sizeof arr/sizeof arr[0];
+ int g= solution(arr,size);
+ printf("%d",g);
+
+}
