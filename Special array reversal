@@ -1,0 +1,79 @@
+Input: S = "A&B"
+Output: "B&A"
+Explanation: As we ignore '&' and
+then reverse, so answer is "B&A".
+#include <stdio.h>
+#include <string.h>
+int solution(char*arr,int n)
+{ int j=n-1;
+int i=0;
+int count=0;
+int count1=0;
+    while(i<j)
+    {
+        if(!((arr[i]>='A'&&arr[i]<='Z')||(arr[i]>='a'&&arr[i]<='z')))
+          {
+              i++;
+              continue;
+          }
+        if(!((arr[j]>='A'&&arr[j]<='Z')||(arr[j]>='a'&&arr[j]<='z')))
+          {
+              j--;
+              continue;
+          }
+           else
+
+             {
+                 char temp=arr[i];
+               arr[i]=arr[j];
+               arr[j]=temp;
+               i++;
+               j--;
+             }
+
+
+    }
+}
+int main()
+{
+    char arr[]="A*#S*f*kK**!G";
+    // printf("%s\n",arr);
+    int n=strlen(arr);
+    solution(arr,n);
+    printf("%s",arr);
+}
+  or
+c++
+class Solution
+{
+    public:
+    string reverse(string arr)
+    {     
+        int j=arr.size()-1;
+int i=0;
+
+    while(i<j)
+    {
+        if(!((arr[i]>='A'&&arr[i]<='Z')||(arr[i]>='a'&&arr[i]<='z')))
+          {
+              i++;
+              continue;
+          }
+        if(!((arr[j]>='A'&&arr[j]<='Z')||(arr[j]>='a'&&arr[j]<='z')))
+          {
+              j--;
+              continue;
+          }
+           else
+
+             {
+                 char temp=arr[i];
+               arr[i]=arr[j];
+               arr[j]=temp;
+               i++;
+               j--;
+             }
+    }
+    return arr;
+    } 
+};
