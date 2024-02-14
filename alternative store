@@ -1,0 +1,76 @@
+Input: {1, 2, 3, 4, 5, 6, 7}
+output: {7, 1, 6, 2, 5, 3, 4}
+int start,end;
+        start=0;
+        end=N-1;
+        sort(arr,arr+N);
+        vector<int> v;
+        for(int i=0;i<N;i++)
+        {
+            if(i%2==0)
+            {
+            v.push_back(arr[end--]);
+            }
+            else
+            {
+            v.push_back(arr[start++]);
+            }
+        }
+        return v;
+          (or)
+#include <stdio.h>
+#include <string.h>
+int sort(int*arr,int size)
+{
+    for(int i=0;i<size;i++)
+    {  int value=arr[i];
+        for(int j=1+i;j<size;j++)
+        {
+            if(value<=arr[j])
+            {
+                   arr[i]=arr[j];
+                   arr[j]=value;
+                   value=arr[i];
+            }
+        }
+    }
+}
+int solution(int*arr,int size)
+{  int arr1[size];
+    int size1=size;
+    int k=size-1;
+    int i=0;
+   // printf("%d",k);
+    for(int i=0;i<size;i++)
+    {
+       arr1[i]=arr[i];
+
+    }
+    for(int j=0;j<size;j++)
+    {
+
+        arr[j]=arr1[i];
+        j++;
+        arr[j]=arr1[k];
+        size;
+        k--;
+        i++;
+
+
+    }
+
+}
+
+int main()
+{
+  int arr[]={7, 1, 2, 3, 4, 5, 6};
+  int size=sizeof arr/sizeof arr[0];
+ sort(arr,size);
+
+  solution(arr,size);
+
+ for(int i=0;i<size;i++)
+{
+       printf("%d",arr[i]);
+}
+}
