@@ -1,0 +1,23 @@
+int rotatedDigits(int n) {
+    int count1=0;
+   // int count=0;
+    for(int i=1;i<=n;i++)
+    { int count=0;
+         int k=i;
+        while(k)
+        {   
+            int remender=k%10;
+            if(remender==3||remender==4||remender==7)
+                 {count=0;
+                 break;}
+            if(remender==2||remender==5||remender==6||remender==9)
+            {
+                 count=1;
+            }
+            k=k/10;
+        }
+        if(count==1)
+        count1++;
+    }
+    return count1;
+}
