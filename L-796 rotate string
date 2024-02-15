@@ -1,0 +1,23 @@
+bool rotateString(char*arr, char* arr1) {
+     int g=strlen(arr);
+    //int k=g-1;
+    int g1=strlen(arr1);
+    if(g1==g)
+   { for(int i=0;i<g;i++)
+   {if(strcmp(arr,arr1)==0)
+       { 
+           return true;
+       }
+   char temp=arr[0];
+   for(int i=0;i<g-1;i++)
+   {
+       arr[i]=arr[i+1];
+   }
+   arr[g-1]=temp; 
+       
+   }
+   }
+    return false;
+
+    
+}
