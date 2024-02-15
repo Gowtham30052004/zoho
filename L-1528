@@ -1,0 +1,22 @@
+char* restoreString(char* s, int* s1, int indicesSize)
+ {  int size=indicesSize-1;
+    for(int i=0;i<=size;i++)
+    {
+        for(int j=0;j<size;j++)
+        {
+            if(s1[i]<s1[j])
+            {
+                int temp=s1[i];
+                 s1[i]=s1[j];
+                 s1[j]=temp;
+                char temp1=s[i];
+                s[i]=s[j];
+                s[j]=temp1;
+            }
+        }
+    }
+    for(int i=0;i<size;i++)
+    printf("%d",s1[i]);
+    return s;
+
+}
