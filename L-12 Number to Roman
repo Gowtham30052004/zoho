@@ -1,0 +1,22 @@
+char *roman[]={"I","IV","V","IX","X","XL","L","XC","C","CD","D","CM","M"};
+    int arr[]={1,4,5,9,10,40,50,90,100,400,500,900,1000};
+    int j=12;
+    char *add;
+   // char*add1=add;
+    
+
+for(int i=0;num>0;++i)
+    {
+        while(num>=arr[j])
+       {  printf("%s",roman[j]);
+           num=num-arr[j];
+          //*add=roman[j];
+
+
+        }
+       // add++;
+        j--;
+    }
+
+return 0 ;
+    
