@@ -1,0 +1,34 @@
+bool isValid(char* s1) {
+ // char*s1=s;
+  int len=strlen(s1);
+  char s2[len];
+  int top=-1;
+
+    while(*s1)
+    {   
+         if((*s1=='(')||(*s1=='{')||(*s1=='['))
+         {
+            s2[++top]=*s1;
+         }
+         else 
+         {if(top==-1)
+         {
+             return false;
+         }
+        // printf("%c",s2[top]);
+        if((*s1==')'&&s2[top]=='(')||(*s1=='}'&&s2[top]=='{')||(*s1==']'&&s2[top]=='['))
+        { //printf("%c",s2[top]);
+       // printf("%c",*s1);
+        top--;
+        }
+       else
+        return false;
+         }
+        s1++;
+    }
+   if(top==-1)
+        return true;
+        else
+return false;
+
+}
